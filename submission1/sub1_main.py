@@ -15,9 +15,10 @@ clf = RandomForestClassifier(n_estimators=100, random_state=42)
 clf.fit(features_train, labels_train)
 
 # Optional: Calculate error of train data
-labels_train_pred = clf.predict(features_test)
+labels_train_pred = clf.predict(features_train)
 accuracy = accuracy_score(labels_train, labels_train_pred)
 print(f"Accuracy: {accuracy * 100:.2f}%")
 
 # Test the classifier on the test data
 labels_test_pred = clf.predict(features_test)
+dp.output_test_file(labels_test_pred, '../out.txt')

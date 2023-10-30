@@ -124,3 +124,10 @@ def most_common_value(n):
             i_max = i
 
     return values[i_max]
+
+def output_test_file(labels, file_name):
+    with open(file_name, 'w') as f:
+        f.write('ID,Prediction\n')
+        for i in range(np.size(labels, 0)):
+            f.write(str(i) + ',' + str(labels[i]) + '\n')
+        f.close()
