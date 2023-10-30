@@ -1,14 +1,15 @@
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 import sub1_data_processor as dp
+import numpy as np
 
 # Process test and train data
 
 [features_train, labels_train] = dp.get_train_data()
-features_test = dp.get_train_data()
+features_test = dp.get_test_data()
 
 # Create a RandomForestClassifier
-clf = RandomForestClassifier(n_estimators=100, random_state=42)  # You can adjust the number of trees (n_estimators)
+clf = RandomForestClassifier(n_estimators=100, random_state=42)
 
 # Train the classifier on the training data
 clf.fit(features_train, labels_train)
